@@ -1,0 +1,37 @@
+---
+title: "Actividad5, Rmarkdown"
+author: "Luciabril, Micaela"
+date: "2 de abril de 2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Incluir imagen 
+
+
+ (![](mirada-perro.jpeg))
+
+nos gusta la imagen porque amamos los perros
+
+## chunk con codiogo de R
+
+``` {r, echo = TRUE, fig.width = 5, fig.height = 5}
+
+library(ggplot2)
+ggplot(data=mpg, aes(x = hwy, y = cty))+
+  geom_point()+
+  theme(aspect.ratio = 1)+
+  labs(x ="millas por galon en carretera", y= "millas por galon en ciudad", title= "scatter millas por galon en carretera vs millas por galon en ciudad")
+```
+  
+## Incluir una tabla 
+
+``` {r, echo = true, results= "asis" }
+library(xtable) 
+xtable(mpg[1:5,1:5])
+
+```
+
